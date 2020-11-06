@@ -7,7 +7,7 @@ const Renderer = function(){
         for(let post of posts)
         {
             console.log(posts)
-            let postBox = $(`<div class="post" data-id="${post.id}"><p class="post-text">${post.text}</p><ul class="comments">${renderComments(post.comments)}</ul></div>`)
+            let postBox = $(`<div class="post" data-id="${post.id}"><p class="post-text">${post.text}</p><div class="comments">${renderComments(post.comments)}</div><input type="text" placeholder="What do you think?" id="input-comment"><button class="comment">Comment</button><button class="delete">Delete Post</button></div>`)
             $("#posts").append(postBox)
         }
     }
@@ -15,7 +15,8 @@ const Renderer = function(){
     const renderComments = function(comments){
         let finalComment = ""
         for(let comment of comments){
-            finalComment += `<li data-id="${comment.id}">${comment.text}</li>`
+            finalComment += `<div data-id="${comment.id}"><span class='delete-comment'>X</span> ${comment.text}</div>`
+            
         }
         return finalComment
     }
