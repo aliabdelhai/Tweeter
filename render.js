@@ -7,7 +7,14 @@ const Renderer = function(){
         for(let post of posts)
         {
             console.log(posts)
-            let postBox = $(`<div class="post" data-id="${post.id}"><p class="post-text">${post.text}</p><div class="comments">${renderComments(post.comments)}</div><input type="text" placeholder="What do you think?" id="input-comment"><button class="comment">Comment</button><button class="delete">Delete Post</button></div>`)
+            let postBox = 
+            $(`<div class="post" data-id="${post.id}">
+            <p class="post-text">${post.text}</p>
+            <div class="comments">${renderComments(post.comments)}</div><div class = "user">
+            <input type="text" placeholder="What do you think?" id="input-comment">
+                <button class="comment">Comment</button>
+                <button class="delete">Delete Post</button>
+            </div></div>`)
             $("#posts").append(postBox)
         }
     }
