@@ -31,7 +31,7 @@ $('#posts').on('click', '.comment', function(){
 $('#posts').on('click', '.delete-comment', function(){
     const postID = $(this).closest('.post').data().id
     console.log(postID)
-    const commentID = $(this).closest('.post').find('.comments').find('div').data().id
+    const commentID = $(this).closest('div').data().id
     console.log(commentID)
     tweeter.removeComment(postID, commentID)
     renderer.renderPosts(tweeter.getPosts())
